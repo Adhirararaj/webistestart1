@@ -1,0 +1,93 @@
+ *{ 
+Margin:0;
+Padding:0;
+Box-sizing: border-box;
+Font-family: 'Gilroy';
+color:white;
+}
+
+html,body{
+Width:100%;
+Height:100%;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+}
+#loader{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: visible;
+    background: #000 url('/zestmarathon/running\ gif.gif') no-repeat center center;
+}
+#nav{
+    height:80px ;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+#nav_2{
+    display: flex;
+    gap: 55px;
+}
+#nav_3{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+img{
+    height: 70px;
+    width: 150px;
+}
+#nav h3{
+    text-transform: capitalize;
+}
+#nav button{
+    background-color: white;
+    color: black;
+    padding: 15px 35px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+}
+h5{
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 25px;
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+#page2{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+#page3{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+#page1 h1{
+    position: relative;
+    /* z-index: 1; */
+    top: 45%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 30vw;
+    /* font-weight: 999; */
+    text-transform: capitalize;
+    white-space: nowrap;
+    /* font-stretch: 250%; */
+}

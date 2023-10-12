@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pagestyle.css">
+    <title>Zest Marathon</title>
+</head>
+<body>
+    <div id="loader">
+
+    </div>
+    <div id="main">
+        <div id="nav">
+            <img src="/zestmarathon/images/Zest Logo white1.png" alt="">
+            <div id="nav_2">
+                <h3>Theme</h3>
+                <h3>Gallery</h3>
+                <h3>About us</h3>
+            </div>
+            <div id="nav_3">
+                <h3>Contact</h3>
+                <button>Register</button>
+            </div>
+        </div>
+        <h5>Scroll down ⬇</h5>
+        <div id="page1"><h1>
+            EMPOWERING FIELDS
+            </h1>
+            
+        </div>
+        <div id="page2"></div>
+        <div id="page3"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var loader;
+        function loadNow(opacity){
+            if(opacity<=0){
+                displayContent();
+            }
+            else{
+                loader.style.opacity = opacity;
+                window.setTimeout(function(){
+                    loadNow(opacity -0.05)
+                },100);
+            }
+        }
+        function displayContent(){
+            loader.style.display='none';
+            document.getElementById('content').style.display='block';
+        }
+        document.addEventListener("DOMContentLoaded",function(){
+            loader = document.getElementById('loader');
+            loadNow(1);
+        });
+        var tl = gsap.timeline()
+        tl.from("#nav img,#nav h3,#nav button",{
+            y:-100,
+            duration:1,
+            delay:0.1,
+            opacity:0,
+            stagger:0.5,
+        })
+        tl.from("h5",{
+            scale:0,
+            opacity:0
+        })
+        tl.to("h5",{
+            y:30,
+            repeat:-1,
+            duration:0.7,
+            yoyo:true
+        })
+        gsap.to("#page1 h1,#page1 h2",{
+            
+            transform:"translateX(-300%)",
+            fontWeight:"100",
+            scrollTrigger:{
+                
+                trigger:"#page1",
+                scroller:"body",
+                // markers:true,
+                start:"top 0",
+                end:"top -200%",
+                scrub:2,
+               //pin:true
+            }
+        })
+    </script>
+</body>
+</html>
